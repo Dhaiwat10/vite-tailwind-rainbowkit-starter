@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
-import { publicProvider } from "wagmi/providers/public";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import '@rainbow-me/rainbowkit/styles.css';
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
+import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, provider } = configureChains(
   [
@@ -22,7 +22,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: () => {
         return {
-          http: "https://rpc.ankr.com/eth",
+          http: 'https://rpc.ankr.com/eth',
         };
       },
     }),
@@ -30,7 +30,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: () => {
         return {
-          http: "https://rpc.ankr.com/eth_goerli",
+          http: 'https://rpc.ankr.com/eth_goerli',
         };
       },
     }),
@@ -38,7 +38,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: () => {
         return {
-          http: "https://rpc.ankr.com/optimism",
+          http: 'https://rpc.ankr.com/optimism',
         };
       },
     }),
@@ -46,7 +46,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: () => {
         return {
-          http: "https://rpc.ankr.com/optimism_testnet",
+          http: 'https://rpc.ankr.com/optimism_testnet',
         };
       },
     }),
@@ -54,7 +54,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: () => {
         return {
-          http: "https://rpc.ankr.com/polygon_mumbai",
+          http: 'https://rpc.ankr.com/polygon_mumbai',
         };
       },
     }),
@@ -62,7 +62,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: () => {
         return {
-          http: "https://rpc.ankr.com/arbitrum",
+          http: 'https://rpc.ankr.com/arbitrum',
         };
       },
     }),
@@ -72,7 +72,7 @@ const { chains, provider } = configureChains(
 
 // you can also add a custom wallet list containing any of the following wallets: Argent, Brave Wallet, Coinbase Wallet, Injected Wallet, Ledger Live, MetaMask, Rainbow, Trust Wallet, Steakwallet, imToken, or WalletConnect. Learn more here: https://www.rainbowkit.com/docs/custom-wallet-list
 const { connectors } = getDefaultWallets({
-  appName: "Vite Tailwind RainbowKit Wagmi Starter",
+  appName: 'Vite Tailwind RainbowKit Wagmi Starter',
   chains,
 });
 
@@ -82,7 +82,7 @@ const wagmiClient = createClient({
   provider,
 });
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains} coolMode>
